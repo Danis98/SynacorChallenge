@@ -1,0 +1,50 @@
+0x0140: Self-test start
+0x06bb: Program deobfuscator
+0x06e2: Deobfuscation end
+0x0418: self-test end
+
+0x0aae: game start
+
+0x17b4: obfuscated prog start
+
+0x1545: after teleporter
+
+north
+east
+east
+north
+west
+south
+east
+east
+west
+north
+north
+east
+
+Strings are encoded: [LEN][LEN BYTES OF STRING]
+
+0x05b2: apply_string_func
+0x05ee: print_string
+0x05f8: print_char
+0x05fb: print_char_xor
+0x084d: xor
+
+print_string(r1=str_addr):
+	apply_string_func(r2=[print_char])
+
+print_char(r1=char):
+	out char
+
+print_char_xor(r1=char, r3=key):
+	out xor(char, key)
+
+apply_string_func(r1=str_addr, r2=str_func):
+	for(i=1;i<mem[str_addr];i++)
+		str_func(mem[str_addr+i])
+
+xor(r1, r2):
+	return r1 ^ r2
+
+8xpYquUdlpol
+loqlbUupYqx8
